@@ -1,30 +1,30 @@
-# Tangram Zinc Style (Some Labels)
+# Tangram Zinc Style (More Labels)
 
 **Zinc** is a light gray style optimized for data visualization overlays. Give [OpenStreetMap](http://www.openstreetmap.org/) data a professional basemap skin using the [Tangram](http://github.com/tangrams/tangram) graphics library and Mapzen's versatile [Vector Tiles](https://mapzen.com/projects/vector-tiles/). 
 
 Mapzen's Zinc style is comparable to Esri's [light gray Canvas](http://blogs.esri.com/esri/arcgis/2011/09/29/esri-canvas-maps-part-i-author-beautiful-web-maps-with-our-new-artisan-basemap-sandwich/) style, Mapbox's [Light](https://www.mapbox.com/blog/custom-styles-mapbox-streets/) style, and CartoDB's [Positron](http://content.stamen.com/new_maps_for_cartodb) by Stamen style. If you like any of those, Mapzen's Zinc basemap style is for you. Please use and adapt the open source scene file in your own projects!
 
-**Looking for help?** There is a mini tutorial after the preview image below walking thru [Vector Tiles API key signup](https://github.com/tangrams/zinc-style-no-labels/blob/gh-pages/README.md#sign-up-for-a-vector-tiles-api-key) and [building a Leaflet map](https://github.com/tangrams/zinc-style-no-labels/blob/gh-pages/README.md#building-a-leaflet-map-using-tangram-and-this-scene-file) using Tangram and this repo's scene file.
+**Looking for help?** There is a mini tutorial after the preview image below walking thru [Vector Tiles API key signup](https://github.com/tangrams/zinc-style-more-labels/blob/gh-pages/README.md#sign-up-for-a-vector-tiles-api-key) and [building a Leaflet map](https://github.com/tangrams/zinc-style-more-labels/blob/gh-pages/README.md#building-a-leaflet-map-using-tangram-and-this-scene-file) using Tangram and this repo's scene file.
 
 ### A family of styles with many flavours
 
 Mapzen offers the Zinc style in three flavors:
 
-1. **[Default](https://github.com/tangrams/zinc-style)** - Full set of labels, including high contrast icons highlighting OpenStreetMap business listing data.
-2. **Some labels** (this repo) - Streets, cities, and water bodies are labeled and some big parks are named only (no icons). No business labels. Good for data visualization overlays that need a to provide some location context.
+2. **[Default](https://github.com/tangrams/zinc-style)** - Some labels for streets, cities, water bodies, and some big parks with name only (no icons). No business labels. Good for data visualization overlays that need to provide some location context.
+1. **More labels** (this repo) - Full set of labels, including high contrast icons highlighting OpenStreetMap business listing data.
 3. **[No labels](https://github.com/tangrams/zinc-style-no-labels)** - Just the lines and polygons, please. 
 
 **Looking for a different style?** We offer a range of styles including [Refill](https://github.com/tangrams/refill) (high contrast black & white cartography) and [Cinnabar](https://github.com/tangrams/cinnabar-style) (classic color cartography). 
 
 
-**Live Zinc demo:** http://tangrams.github.io/zinc-style-some-labels
+**Live Zinc demo:** http://tangrams.github.io/zinc-style
 
-![zinc-style-some-labels-preview](https://cloud.githubusercontent.com/assets/853051/11136794/c8c54190-8966-11e5-9017-b7f06d6841bb.png)
+![zinc-style-preview](https://cloud.githubusercontent.com/assets/853051/11136795/c8c7b916-8966-11e5-81e3-8db20c26ffb0.png)
 
 
 ## Developer resources
 
-**So how do you actually use this stuff?** Tangram styles are called "scenes" and are written in YAML. The scene file (e.g.: [zinc-style-some-labels.yaml](https://github.com/tangrams/zinc-style-some-labels/blob/gh-pages/zinc-style-some-labels.yaml)) requires a vector tile source. To use Mapzen's vector tile service you must first obtain a free developer API key and update your scene file with that key. 
+**So how do you actually use this stuff?** Tangram styles are called "scenes" and are written in YAML. The scene file (e.g.: [zinc-style.yaml](https://github.com/tangrams/zinc-style/blob/gh-pages/zinc-style.yaml)) requires a vector tile source. To use Mapzen's vector tile service you must first obtain a free developer API key and update your scene file with that key. 
 
 ### Sign up for a Mapzen Vector Tiles API key
 
@@ -39,9 +39,9 @@ Mapzen offers the Zinc style in three flavors:
 
 Using Tangram and Mapzen's Vector tiles inside the popular [Leaflet](http://leafletjs.com) mapping framework is easy. We'll make it even easier soon to do this via a Leaflet [provider](https://github.com/leaflet-extras/leaflet-providers), but in the meantime...
 
-1. Update your copy of the scene file on [line 450](https://github.com/tangrams/zinc-style-some-labels/blob/gh-pages/zinc-style-some-labels.yaml#L450) to reference the API key you created in Step 3 in the **Sign up** section above. 
+1. Update your copy of the scene file on [line 450](https://github.com/tangrams/zinc-style-more-labels/blob/gh-pages/zinc-style-more-labels.yaml#L450) to reference the API key you created in Step 3 in the **Sign up** section above. 
 `url:  //vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-{your-api-key-here}`
-2. Reference the [index-demo.html](index-demo.html) file in any of the style repos for how to configure Leaflet with Tangram and the scene file (e.g.: [Zinc](http://github.com/tangrams/zinc-style-some-labels)). 
+2. Reference the [index-demo.html](index-demo.html) file in any of the style repos for how to configure Leaflet with Tangram and the scene file (e.g.: [Zinc](http://github.com/tangrams/zinc-style-more-labels)). 
 3. Looking for a more sophisticated implementation that includes basic search? The main [index.html](index.html) file has a more real world example.
 4. Need help testing your map locally? See the README in each repo.
 5. Wondering where to host your map? Make a public repo on Github (or fork ours!) and enjoy their [GitHub Pages](https://pages.github.com) to github.io magic dance.
