@@ -44,146 +44,148 @@ labels-global:
     - &text_visible_path              true
     - &text_visible_steps             true
 
-traditional-colors:
+zinc-light-gray-colors:
     cameras:
         - &camera_settings            { type: isometric, axis: [0, .1], vanishing_point: [0, -500] }
 
     lights:
         - &light_settings             { type: directional, direction: [1, 1, -.9], diffuse: 0.5, ambient: 0.85 }
-
+ 
     roads:
-        - &highway1                   '#f8c2c2'
-        - &highway1_e                 '#eeb1b1'
-        - &highway_link1              '#D19596'
-        - &highway_casing1            '#D16768'
-        - &highway_tunnel1            '#D19596'       #85%
-        - &highway_tunnel_casing1     [0.3, 0.3, 0.3] #95%
-        - &highway_link_tunnel_casing1 '#D16768'      #95%
-        - &ferry1                     '#7caacb'
+        - &highway1                   [0.8, 0.8, 0.8]
+        - &highway1_e                 [0.8, 0.8, 0.8]
+        - &highway_link1              [0.8, 0.8, 0.8]
+        - &highway_casing1            [0.2, 0.2, 0.2]
+        - &highway_tunnel1            [0.6, 0.6, 0.6]
+        - &highway_tunnel_casing1     [0.75, 0.75, 0.75]
+        - &highway_link_tunnel_casing1 [0.6, 0.6, 0.6]
+        - &ferry1                     [0.4, 0.4, 0.4]
         - &rail1                      '#777'
-        - &rail1_e                    '#bbb'
+        - &rail1_e                    '#777'
         - &rail2                      '#999'             # less important rail (service, sidings)
-        - &major_road1                '#fbf2f2'    #80%
-        - &major_road1b               '#faeeee'    #10%
-        - &major_road1c               white    #15%
-        - &major_road2                white    #20%
-        - &major_road2a               white    #17%
-        - &major_road2b               white    #25%
-        - &major_road3                white    #30%
-        - &major_road4                white
-        - &major_road5                '#e3989a'
-        - &major_casing1              '#d19596'           # same as highway_casing1
-        - &major_casing2              '#d19596'           # zoomed out
-        - &major_tunnel1              grey                # light orange (major_route1)
-        - &major_tunnel_casing1       [0.3, 0.3, 0.3]
-        - &major_route1               '#f8d8d9'
-        - &major_route2               '#e3989a'           # zoomed out
-        - &minor_route                '#d19596'           # same as major_route
-        - &minor_road1                white               # natural earth
-        - &minor_road2                whtie               # natural earth, same as major_road2
-        - &minor_road3                white
-        - &minor_road4                white               # zoomed out
-        - &minor_road5                white               # zoomed out, again
-        - &minor_casing1              white               # same as highway_casing1
-        - &minor_casing2              grey                # zoomed out
-        - &minor_tunnel1              white
-        - &minor_tunnel_casing1       [0.3, 0.3, 0.3]
-        - &service_road1              white
-        - &service_road2              white
-        - &service_road_casing1       white
-        - &service_road_casing2       white
-        - &path1                      '#fff'
-        - &path2                      '#fff'              # zoomed out
-        - &path_casing1               '#fff'
-        - &path_bridge_casing1        black
+        - &major_road1                [0.8, 0.8, 0.8]
+        - &major_road1b               [0.8, 0.8, 0.8]
+        - &major_road1c               [0.8, 0.8, 0.8]
+        - &major_road2                [0.8, 0.8, 0.8]
+        - &major_road2a               [0.8, 0.8, 0.8]
+        - &major_road2b               [0.8, 0.8, 0.8]
+        - &major_road3                [0.8, 0.8, 0.8]
+        - &major_road4                [0.8, 0.8, 0.8]
+        - &major_road5                [0.8, 0.8, 0.8]
+        - &major_casing1              [0.45, 0.45, 0.45]  # same as highway_casing1
+        - &major_casing2              [0.5, 0.5, 0.5]     # zoomed out
+        - &major_tunnel1              grey
+        - &major_tunnel_casing1       [0.75, 0.75, 0.75]
+        - &major_route1               [0.8, 0.8, 0.8]
+        - &major_route2               [0.8, 0.8, 0.8]     # zoomed out
+        - &minor_route                [0.8, 0.8, 0.8]     # same as major_route
+        - &major_road4                [0.60, 0.60, 0.60]
+        - &minor_road1                [0.60, 0.60, 0.60]  # natural earth
+        - &minor_road2                [0.40, 0.40, 0.40]  # natural earth, same as major_road2
+        - &minor_road3                '#ccc'
+        - &minor_road4                '#ccc'              # zoomed out
+        - &minor_road5                [0.8, 0.8, 0.8]     # zoomed out, again
+        - &minor_casing1              [0.2, 0.2, 0.2]     # same as highway_casing1
+        - &minor_casing2              [0.2, 0.2, 0.2]     # zoomed out
+        - &minor_tunnel1              [0.9, 0.9, 0.9]
+        - &minor_tunnel_casing1       [0.1, 0.1, 0.1]
+        - &service_road1              [0.2, 0.2, 0.2]
+        - &service_road2              '#bbb'
+        - &service_road_casing1       grey
+        - &service_road_casing2       '#444'
+        - &path1                      '#b3b3b3'
+        - &path2                      '#b3b3b3'           # zoomed out
+        - &path_casing1               '#6b6b6b'
+        - &path_bridge_casing1        grey
         - &path_bridge_casing2        grey                # zoomed out
-        - &path_steps1                '#bcc19e'
-        - &path_steps1_b              '#e3e2e0'
-
+        - &path_steps1                grey
+        - &path_steps1_b              '#dadada'
+        
     boundaries:
-        - &country_boundary           '#222'
-        - &region_boundary            '#777'
-        - &subregion_boundary         '#bbb'
-        - &city_wall                  '#ccb38f'
-        - &retaining_wall             '#d9c4a5'
+        - &country_boundary           [0.3,0.3,0.3]
+        - &region_boundary            [0.4,0.4,0.4]
+        - &subregion_boundary         '#ccc'
+        - &city_wall                  '#b7b7b7'
+        - &retaining_wall             '#c7c7c7'
 
     areas:
-        - &scene1      white               # map background, water
-        - &water1      '#9dc3de'           # water
-        - &water2      [.75,.75,.75]       # playa
-        - &water1_o    '#9dc3de'           # water stroke
-        - &water2_o    '#9dc3de'           # water stroke 2
-        - &earth1      '#e3e2e0'           # land color
+        - &scene1      [0.85, 0.85, 0.85]  # map background, water
+        - &water1      grey                # water
+        - &water2      [0.70, 0.70, 0.70]  # playa
+        - &water1_o    [0.30, 0.30, 0.30]  # water stroke
+        - &water2_o    [0.40, 0.40, 0.40]  # water stroke
+        - &earth1      [0.75, 0.75, 0.75]  # land color
         - &earth1_r    '#666'              # land color road
-        - &earth2      '#d8d3ca'           # urban
-        - &earth2_v    false               # urban visibility
-        - &earth2_e    '#d8d3ca'           # urban early
-        - &earth2_e2   '#d4cfc6'           # urban early fade in
-        - &earth2_e3   '#dbd8d3'           # urban early fade in 3
+        - &earth2      '#111'              # urban
+        - &earth2_v    false               # urban
+        - &earth2_e    '#b3b3b3'           # urban early
+        - &earth2_e2   '#b3b3b3'           # urban early fade in
+        - &earth2_e3   '#bbbbbb'           # urban early fade in 3
         - &earth2_ev   true                # urban early visibility
-        - &green1      '#aed0b6'           # park (national park, local parks)
-        - &green1_r    '#bddec5'           # park roads
-        - &green1_b    '#9caca0'           # park buildings
-        - &green1_bo   [.20, .20, .20]     # park building outlines
-        - &green1_w    '#b7d7bf'           # wilderness area
-        - &green1_ws   '#aed0b6'           # wilderness area stroke
-        - &green2      '#b8d2bf'           # cemetery
-        - &green2_r    [0.7,0.7,0.7]       # cemetery road
-        - &green3      '#b8d2bf'           # golf course
-        - &green4      '#e3e2e0'           # farm faint
+        - &green1      [0.55,0.55,0.55]    # park
+        - &green1_r    [0.60,0.60,0.60]    # park roads
+        - &green1_b    [0.60, 0.60, 0.60]  # park buildings
+        - &green1_bo   [0.20, 0.20, 0.20]  # park building outlines
+        - &green1_w    [0.6,0.6,0.6]       # wilderness area
+        - &green1_ws   '#6e6e6e'           # wilderness area stroke
+        - &green1b     [0.80,0.80,0.80]    # park
+        - &green2      [0.7,0.7,0.7]       # cemetery
+        - &green2_r    [0.65,0.65,0.66]    # cemetery road
+        - &green3      [0.7,0.7,0.7]       # golf course
+        - &green4      [0.90,0.90,0.9]     # farm faint
         - &green4_v    false               # farm faint
-        - &green5      '#e3e2e0'           # farm
-        - &green6      '#94d59f'           # nature reserve
-        - &green7      '#bddec5'           # forest
-        - &green8      '#bddec5'           # conservation
-        - &green9      '#cfe3d4'           # forest (landcover)
-        - &green9_e    '#cfe3d4'           # forest (landcover) early
+        - &green5      [0.75,0.75,0.75]    # farm
+        - &green6      [0.55,0.55,0.55]    # nature reserve
+        - &green7      [0.65,0.65,0.65]    # forest / park
+        - &green8      [0.65,0.65,0.65]    # conservation
+        - &green9      [0.7, 0.7, 0.7]     # forest (landcover)
+        - &green9_e    [0.7, 0.7, 0.7]     # forest (landcover) early
         - &green9_v    true                # forest (landcover) visibility
-        - &orange1     '#bfb08e'           # stadium
-        - &orange2     '#d8ccb0'           # pitch (play field)
-        - &brown1      '#D9CFC3'           # university
-        - &brown1_r    '#cec1b2'           # university roads
-        - &brown1_b    '#b1aca4'           # university buildings
-        - &brown1_bo   [.30, .30, .30]     # university building outlines
-        - &brown2      '#D9CFC3'           # school
-        - &brown3      '#c7b7a2'           # playground
-        - &red1        '#d9c3c3'           # hospital
-        - &red1_r      '#d9c3c3'           # hospital roads
-        - &red1_b      '#b5a7a7'           # hospital buildings
-        - &red1_bo     [.30, .30, .30]     # hospital building outlines
-        - &grey1       '#dcdcdc'           # pedestrian, retail, airport apron, parking, church
-        - &grey1_e     '#dad6d4'           # pedestrian, retail, airport apron, parking, church early zoom 14
+        - &orange1     '#aaaaaa'           # stadium
+        - &orange2     '#bbbbbb'           # pitch (play field)
+        - &brown1      [.67, .67, .67]     # university
+        - &brown1_r    [.5, .5, .5]        # university roads
+        - &brown1_b    [.63, .63, .63]     # university buildings
+        - &brown1_bo   [0.20, 0.20, 0.20]  # university building outlines
+        - &brown2      '#aaaaaa'           # school
+        - &brown3      '#b8b8b8'           # playground
+        - &red1        '#a2a2a2'           # hospital
+        - &red1_r      [.5, .5, .5]        # hospital roads
+        - &red1_b      [.65, .65, .65]     # hospital buildings
+        - &red1_bo     [0.20, 0.20, 0.20]  # hospital building outlines
+        - &grey1       '#cccccc'           # pedestrian, retail, airport apron, parking, church
+        - &grey1_e     [.8, .8, .8]        # pedestrian, retail, airport apron, parking, church early zoom 14
         - &grey1_v     true                # pedestrian, retail, airport apron, parking, church
-        - &grey2       orange              # airport runway
-        - &grey3       '#d7d7d7'           # railway
-        - &grey4       '#ffc52a'           # airport taxiway
-        - &grey5       '#ffc52a'           # airport taxiway
-        - &grey6       '#d1d1d1'           # industrial
-        - &grey6_b     [.70, .70, .70]     # industrial buildings
-        - &grey6_bo    [.20, .20, .20]     # industrial building outlines
-        - &purple      '#d2d1cd'           # airport
+        - &grey2       [0.3, 0.3, 0.3]     # airport runway
+        - &grey3       [0.65,0.65,0.65]    # railway
+        - &grey4       '#cfcfcf'           # airport taxiway
+        - &grey5       '#cfcfcf'           # airport taxiway
+        - &grey6       '#c6c6c6'           # industrial
+        - &grey6_b     [.65, .65, .65]     # industrial buildings
+        - &grey6_bo    [.8, .8, .8]        # industrial building outlines
+        - &purple      [.55, .55, .55]     # airport
         - &purple_v    true                # airport
-        - &mystry1     '#d9d7c3'           # recreation ground
-        - &building1   [.8, .8, .8]        # building
-        - &building2   [.6, .6, .6]        # building stroke
-        - &building_o  5                   # building stroke order
-        - &building_e  true                # building stroke order
+        - &mystry1     '#aaaaaa'           # recreation ground (type of park, sometimes around reservoirs)
+        - &building1   [.7, .7, .7]        # building
+        - &building2   [.1, .1, .1]        # building stroke
+        - &building_o  25                  # building stroke order
+        - &building_e  false               # building extrude
     
     labels:
-        - &text_fill          '#333'             # WHITE
-        - &text_fill2         '#000'             # WHITE
-        - &text_fill_building '#ccc'             # WHITE
-        - &text_fill_water    '#4c89b5'          # blue
-        - &text_fill_park     '#43a254'          # green
-        - &text_stroke        '#e4e1de'          # land color
-        - &text_stroke_water  [0.9, 0.9, 0.9]    # water stroke color
-        - &text_stroke_park   '#bddec5'          # park stroke color
-        - &text_stroke_building  [.8, .8, .8]    # building stroke color
-        - &text_stroke_road1  '#f8c2c2'          # road stroke color highway
-        - &text_stroke_road2  '#fbf2f2'          # road stroke color major road
-        - &text_stroke_road3  '#f8d8d9'          # road stroke color major road route
-        - &text_stroke_road4  white              # road stroke color minor road
-        - &townspot_sprite    townspot-l-rev     # depends on land color and text settings
+        - &text_fill         [0.2, 0.2, 0.2]    # BLACK
+        - &text_fill2        '#555'             # WHITE
+        - &text_fill_building [0.3, 0.3, 0.3]   # WHITE
+        - &text_fill_water   '#000'             # blue
+        - &text_fill_park    '#000'             # green
+        - &text_stroke       [0.8, 0.8, 0.8]    # land color
+        - &text_stroke_water [0.8, 0.8, 0.8]    # water stroke color
+        - &text_stroke_park  [0.8, 0.8, 0.8]    # park stroke color
+        - &text_stroke_building  [.8, .8, .8]   # building stroke color
+        - &text_stroke_road1  [0.8, 0.8, 0.8]   # road stroke color highway
+        - &text_stroke_road2  [0.8, 0.8, 0.8]   # road stroke color major road
+        - &text_stroke_road3  [0.8, 0.8, 0.8]   # road stroke color major road route
+        - &text_stroke_road4  [0.8, 0.8, 0.8]   # road stroke color minor road
+        - &townspot_sprite   townspot-l-rev     # depends on land color and text settings
 
 textures:
     pois:
