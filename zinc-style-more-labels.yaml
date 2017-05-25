@@ -415,8 +415,8 @@ global:
     grey7_v:            true                # pedestrian visibility
     grey8:              [.85, .85, .85]     # winter sports
     grey8_v:            true                # winter sports visibility
-    grey9:              [.5, .5, .5]        # transit platform
-    grey9_o:            [.55, .55, .55]        # transit platform outline
+    grey9:              [.5, .5, .5, 0.5]   # transit platform
+    grey9_o:            [.55, .55, .55]     # transit platform outline
     grey9_v:            true                # transit platform visibility
     grey10:             [.85, .85, .85]     # generic major landuse (theme park, resort, aquarium, winery)
     grey10_o:           [.85, .85, .85]     # generic major landuse outline
@@ -822,7 +822,6 @@ styles:
     icons:
         base: points
         texture: pois
-        interactive: global.sdk_interactive
         blend_order: 1
     text-blend-order:
         base: text
@@ -843,25 +842,21 @@ styles:
     ux-location-gem-overlay:
         base: points
         texture: pois
-        interactive: global.sdk_interactive
         blend: overlay
         blend_order: 2
     ux-icons-overlay:
         base: points
         texture: pois
-        interactive: global.sdk_interactive
         blend: overlay
         blend_order: 3
     sdk-point-overlay:
         base: points
         texture: pois
-        interactive: global.sdk_interactive
         blend: overlay
         blend_order: 3
     sdk-shield-overlay:
         base: points
         texture: pois
-        interactive: global.sdk_interactive
         blend: overlay
         blend_order: 3
     sdk-line-overlay:
@@ -904,6 +899,7 @@ layers:
         data: { source: mz_route_line }
         draw:
             ux-route-line-overlay:
+                interactive: global.sdk_interactive
                 color: black
                 order: 500
                 width: [[0,3.5px],[5,5px],[9,7px],[10,6px],[11,6px],[13,8px],[14,9px],[15,10px],[16,11px],[17,12px],[18,10px]]
@@ -911,6 +907,7 @@ layers:
         data: { source: mz_dash_line }
         draw:
             ux-route-line-dash-overlay:
+                interactive: global.sdk_interactive
                 color: '#06a6d4'
                 order: 500
                 width: [[2,2px],[5,2.5px],[11,3px],[16,7px],[17,9px]]
@@ -921,6 +918,7 @@ layers:
                 # each transit route segment could be a different "line" each with it's own color
                 # but some transit lines don't define a color, in those cases default to blue
                 # and since the color is coming from Transit.land they call it "color" instead of "colour"
+                interactive: global.sdk_interactive
                 color: function() { return feature.color || '#06a6d4'; }
                 order: 500
                 width: [[0,3.5px],[5,5px],[9,7px],[10,6px],[11,6px],[13,8px],[14,9px],[15,10px],[16,11px],[17,12px],[18,10px]]
@@ -1121,6 +1119,7 @@ layers:
         data: { source: mz_default_line }
         draw:
             sdk-line-overlay:
+                interactive: global.sdk_interactive
                 color: black
                 order: 503
                 width: 3px
@@ -1128,6 +1127,7 @@ layers:
         data: { source: mz_default_polygon }
         draw:
             sdk-polygon-overlay:
+                interactive: global.sdk_interactive
                 color: [0.,0.,0.,0.4]  #'#06b1e2'
                 order: 501
             sdk-line-overlay:
@@ -3720,31 +3720,6 @@ layers:
                             transform: uppercase
                             stroke: { color: global.earth1, width: 3px }
 
-        city_walls:
-            filter: { kind: city_wall }
-            draw:
-                lines:
-                    color: global.city_wall
-                    width: [[12, 0.75px], [13, 1.0px], [14, 1.2px], [15, 2.0px], [16, 2.5px], [19, 6m]]
-        retaining_wall:
-            filter: { kind: retaining_wall }
-            draw:
-                lines:
-                    color: global.retaining_wall
-                    width: [[14, 0.5px], [15, 1.0px], [16, 1.5px], [17, 2.0px], [19, 4m]]
-        fence:
-            filter: { kind: fence }
-            draw:
-                lines:
-                    color: global.fence
-                    width: [[16, 0px], [17, 1px], [18, 1.5px], [20, 0.5m]]
-        snow_fence:
-            filter: { kind: snow_fence }
-            draw:
-                lines:
-                    color: global.snow_fence
-                    width: [[14, 0.5px], [15, 1.0px], [16, 1.5px], [17, 2.0px], [19, 4m]]
-
     places:
         data: { source: mapzen, layer: places }
         filter:
@@ -5390,6 +5365,8 @@ layers:
         draw:
             polygons:
                 order: global.feature_order
+            lines:
+                order: global.feature_order
 
         landuse-labels:
             filter:
@@ -5874,6 +5851,7 @@ layers:
                         color: global.orange2
                     outline:
                         style: lines
+                        order: global.feature_order
                         color: global.green6
                         width: [[14,0px],[15,1px],[16,1m]]
             place_of_worship:
@@ -5907,6 +5885,7 @@ layers:
                         color: global.grey11
                     outline:
                         style: lines
+                        order: global.feature_order
                         color: global.grey11_o
                         width: [[14,0px],[15,1px],[16,0.5m]]
 
@@ -5959,6 +5938,7 @@ layers:
                         visible: true
                     outline:
                         style: lines
+                        order: global.feature_order
                         color: global.grey12_o
                         width: [[14,0px],[15,1px],[16,0.5m]]
             minor-zoo-landuse:
@@ -5974,6 +5954,7 @@ layers:
                         visible: true
                     outline:
                         style: lines
+                        order: global.feature_order
                         color: global.green11_o
                         width: [[14,0px],[15,1px],[16,0.5m]]
 
@@ -5986,6 +5967,31 @@ layers:
                 polygons:
                     order: global.feature_order
                     color: [[0, global.earth2_e],[6, global.earth2_e2],[8, global.earth2_e3]]
+
+        city_walls:
+            filter: { kind: city_wall }
+            draw:
+                lines:
+                    color: global.city_wall
+                    width: [[12, 0.75px], [13, 1.0px], [14, 1.2px], [15, 2.0px], [16, 2.5px], [19, 5m]]
+        retaining_wall:
+            filter: { kind: retaining_wall }
+            draw:
+                lines:
+                    color: global.retaining_wall
+                    width: [[14, 0.5px], [15, 1.0px], [16, 1.5px], [17, 2.0px], [19, 3m]]
+        fence:
+            filter: { kind: fence }
+            draw:
+                lines:
+                    color: global.fence
+                    width: [[16, 0px], [17, 1px], [18, 1.5px], [20, 0.5m]]
+        snow_fence:
+            filter: { kind: snow_fence }
+            draw:
+                lines:
+                    color: global.snow_fence
+                    width: [[14, 0.5px], [15, 1.0px], [16, 1.5px], [17, 2.0px], [19, 2m]]
 
 #    transit-bus-roads:
 #        data: { source: mapzen, layer: roads }
